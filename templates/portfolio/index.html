@@ -1,0 +1,115 @@
+{% load static %}
+{% include "portfolio/base.html" %}
+{% block content %}
+
+    <!--header section-->
+    <header>
+      <h3><span id="me">My</span>Portfolio</h3>
+      <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Project</a>
+        <a href="#skills">Skill</a>
+      </div>
+    </header>
+
+    
+    <!--hero section-->
+    <section class="intro" id="home">
+      <div class="introduction">
+        <div>
+          <h2>Hello there, I'm</h2>
+          <h1>Renuka Deshpande</h1>
+          <h3>Full stack developer | Coder | Ai/ml</h3>
+          <p>
+            Welcome to my portfolio!<br />
+            I'm a passionate coder skilled in C, C++, Java, and Python, with strong expertise in web development.<br />
+            Always eager to build, learn, and create impactful digital solutions.<br />
+            I also have expertise in data structures and algorithm
+          </p>
+        </div>
+        {% for img in image %}
+        <div>
+          <img id="myimage" src="{{img.image.url}}" alt="Renuka image" />
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+
+    <!--about section-->
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        Hello! I'm Renuka Deshpande, a passionate and curious Computer Science and Engineering student, currently pursuing my degree with a strong interest in building innovative and impactful technology solutions.<br /><br />
+        My academic journey has given me a solid foundation in programming, data structures, algorithms, and software development. I'm particularly interested in areas like artificial intelligence, machine learning & problem-solving. Beyond coursework, I actively explore new technologies, contribute to projects, and continuously strive to enhance my skills through hands-on experience.<br /><br />
+        I enjoy turning ideas into reality through code and love the challenge of finding efficient solutions to complex problems. Whether working independently or collaborating on a team, I’m committed to learning, growing, and making a meaningful impact in the tech space.
+      </p>
+    </section>
+
+
+    <!-- Skills Section  #f0f4f8-->
+    <section id="skills" style="background-color: #ffffff; padding: 60px 20px;">
+      <h2 style="text-align: center;">My Skills</h2>
+      <div class="skills-container">
+        {% for category in categories %}
+        <div class="skill-category">
+          <h3>{{ category.title}}</h3>
+          {% for skill in category.skills.all %}<!--SAMJHNA HAI-->
+          <ul>
+            <li>{{skill.name}}</li>
+          </ul>
+          {% endfor %}
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2 style="text-align: center;">Projects</h2>
+      <div class="projects-container">
+        {% for project in projects %}
+        <div class="project-card">
+          <h3>{{project.title}}</h3>
+          <p>{{project.description}}</p>
+          <p>
+            <strong>Tech Stack:</strong>
+            {{project.techstack}}
+          </p>
+          <div class="project-links">
+            <a href="{{project.link}}" target="_blank">View on GitHub</a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+
+    <!--Get in touch-->
+    <section class="lastsec">
+      <h2 id="lasthead">Get In Touch</h2>
+      <div class="lsec">
+        <div class="contact-form">
+          <form method='Post' action="{% url 'sendmail' %}">
+            {% csrf_token %}
+            <label>Name</label><br />
+            <input type="text" name="name" /><br />
+            <label>Email</label><br />
+            <input type="email" name="email" /><br />
+            <label>Message</label><br />
+            <textarea rows="4" name="message"></textarea><br />
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+        <div class="info">
+          <h3>Connect with me:</h3>
+          <a href="https://renukadeshpande2005@gmail.com" target="_blank"><img src="{%static "images/email.png" %}" alt="email" />renukadeshpande2005@gmail.com</a>
+          <a href="https://github.com/Renuka-deshpande" target="_blank"><img src="{% static "images/github.png" %}" alt="github" />github.com/Renuka-deshpande</a>
+          <a href="https://linkedin.com/in/itsrenuka" target="_blank"><img src="{%static "images/linkedin.png" %}" alt="linkedin" />linkedin.com/in/itsrenuka</a>       
+          <a href="https://x.com/_renukad" target="_blank"><img src="{%static "images/x.png"  %}"alt="x" />x.com/_renukad</a>          
+        </div>
+      </div>
+    </section>
+{% endblock %}
