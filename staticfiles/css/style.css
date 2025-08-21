@@ -1,0 +1,391 @@
+/* General Body and Font Styles */
+html, body {
+    background-color: #FAF9F6;
+    font-family: 'Merriweather', serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth; /* For smooth scrolling */
+}
+
+/* Header and Navigation */
+header {
+    background-image: url("../images/pinkwhitegrid.jpg");
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5rem;
+    border-bottom: 1px solid #FFE4EC;
+}
+
+header h3 {
+    font-family: 'Bitcount Single', sans-serif;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+#me {
+    color: #F77FBE;
+    font-family: inherit;
+}
+
+.navbar {
+    display: flex;
+    gap: 25px;
+}
+
+.navbar a {
+    color: black;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+    background-color: #F77FBE;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Hero Section (Introduction) */
+.intro {
+    padding: 4rem 10rem;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.introduction {
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.introduction h1 {
+    font-size: 90px;
+    font-family: 'Arizonia', cursive;
+    color: #F77FBE;
+    font-weight: 400;
+    margin: 0;
+    line-height: 1;
+}
+
+.introduction h2,
+.introduction h3 {
+    margin: 0;
+}
+
+.introduction h2 {
+  font-size: 12px;
+  border: 2px solid #F77FBE;
+  border-radius: 20px;
+  padding: 5px 12px;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.introduction h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #555;
+}
+
+.introduction p {
+    line-height: 1.6;
+    color: #666;
+}
+
+#myimage {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #FFE4EC;
+    box-shadow: 0 10px 30px rgba(247, 127, 190, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+#myimage:hover {
+    transform: scale(1.05) rotate(3deg);
+    box-shadow: 0 15px 40px rgba(247, 127, 190, 0.3);
+}
+
+/* About Me Section */
+#about {
+    background-color: #FFE4EC;
+    padding: 4rem 10rem;
+    text-align: center;
+}
+
+#about h2 {
+    color: #F77FBE;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#about p {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    color: #444;
+}
+
+/* --- Improved Skills Section --- */
+#skills {
+    background-color: #FFFFFF;
+    padding: 60px 20px;
+}
+
+#skills h2 {
+    text-align: center;
+    color: #F77FBE;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.skill-category {
+    background-color:#ffffff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    width: 280px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid #F77FBE;
+}
+
+.skill-category:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 35px rgba(247, 127, 190, 0.2);
+}
+
+.skill-category h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #F77FBE;
+    font-family: 'Bitcount Single', sans-serif;
+    font-size: 1.5rem;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-category ul li {
+    padding: 10px 0;
+    color: #555;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.skill-category ul li:last-child {
+    border-bottom: none;
+}
+
+/* --- Improved Projects Section --- */
+#projects {
+    background-color: #FFE4EC;
+    padding: 60px 20px;
+}
+
+#projects h2 {
+    text-align: center;
+    color: #F77FBE;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.projects-container {
+    display: flex;
+    flex-direction: column; /* Stacks projects vertically */
+    align-items: center;
+    gap: 40px; /* Space between cards */
+}
+
+.project-card {
+    background-color: #ffffff;
+    width: 80%; /* Takes up more width */
+    max-width: 800px; /* But not too wide on large screens */
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 7px solid #F77FBE; /* Thematic accent */
+}
+
+.project-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(247, 127, 190, 0.25);
+}
+
+.project-card h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 1.8rem;
+}
+
+.project-card p {
+    margin: 10px 0;
+    color: #444;
+    line-height: 1.7;
+}
+
+.project-card p strong {
+    color: #F77FBE;
+}
+
+.project-card .project-links {
+    margin-top: 20px;
+}
+
+.project-card a {
+    color: #F77FBE;
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.project-card a:hover {
+    text-decoration: underline;
+    color: #d961a5;
+}
+
+
+/* Contact Section */
+.lastsec {
+    background-color:#FFF5E4;
+    padding: 3rem 5rem;
+}
+
+#lasthead {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #F77FBE;
+    font-size: 2.5rem;
+}
+
+.lsec {
+    display: flex;
+    gap: 5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contact-form {
+    flex: 1;
+    min-width: 320px;
+    max-width: 450px;
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 6px 25px rgba(247, 127, 190, 0.25);
+}
+
+.contact-form label {
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    display: block;
+    color: #F77FBE;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #F77FBE;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: 'Merriweather', serif;
+    background-color: #fff;
+    box-sizing: border-box; /* Important for padding */
+}
+
+.contact-form textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.contact-form button {
+    padding: 0.7rem 1.5rem;
+    background-color: #F77FBE;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    margin-top: 1rem;
+}
+
+.contact-form button:hover {
+    background-color: #d961a5;
+}
+
+.info {
+    flex: 1;
+    min-width: 320px;
+    max-width: 450px;
+    background-color: #ffffff;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 6px 25px rgba(247, 127, 190, 0.25);
+}
+
+.info a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 1.2rem;
+    color: #333;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.info a:hover {
+    color: #F77FBE;
+}
+
+.info h4 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    color: #F77FBE;
+}
+
+.info .social-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.info button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.info img {
+    width: 38px;
+    height: 38px;
+    transition: transform 0.3s ease;
+}
+
+.info button:hover img {
+    transform: scale(1.15) rotate(-5deg);
+}
