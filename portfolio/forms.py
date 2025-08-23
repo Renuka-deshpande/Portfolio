@@ -1,6 +1,7 @@
 from django import forms
+from .models import ContactModel
 
-class ContactForm(forms.Form):
-    name=forms.CharField(max_length=250)
-    email=forms.EmailField()
-    message=forms.CharField(widget=forms.Textarea)##SAMJHNA HAI
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = ContactModel
+        fields = ['name', 'email', 'message']

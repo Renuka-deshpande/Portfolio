@@ -36,10 +36,10 @@ class ProjectModel(models.Model):
 
     def __str__(self):
         return self.title
-##class ContactModel(models.Model):
-   ## name=models.CharField(max_length=100)
-    ##email=models.EmailField()
-    ##message=models.TextField()
+class ContactModel(models.Model):
+    name=models.CharField(max_length=100)
+    email=models.EmailField()
+    message=models.TextField()
 
-   ## def __str__(self):
-     ##   return f"Message from {self.name}"
+    def __str__(self):
+       return f"Message from {self.name}"
