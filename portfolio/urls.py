@@ -6,7 +6,4 @@ urlpatterns =  [
    path('', views.home ,name="home"),
    path('sendmail/',views.sendmail,name='sendmail'),  
    path('success/',views.success,name='success'),    
-
-     
-
 ]
